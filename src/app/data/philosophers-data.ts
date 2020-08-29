@@ -41,4 +41,6 @@ const PHILOSOPHERS_OF_HISTORY: IPhilosophers[] = [
         sumOfBeliefs: ['christianized Aristotle'],
         birthDate: new Date('1/1/1225')
     }
-]
+];
+
+export {PHILOSOPHERS_OF_HISTORY};
