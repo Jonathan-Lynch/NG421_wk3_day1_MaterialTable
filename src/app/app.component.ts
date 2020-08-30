@@ -14,5 +14,7 @@ export class AppComponent implements OnInit {
 
   constructor(private PhilosophersService: PhilosophersService){}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.dataSource = new MatTableDataSource(this.PhilosophersService.getPhilosophers());
+  }
 }
