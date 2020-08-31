@@ -1,1 +1,44 @@
-<p>App Works!!!</p>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" align="center">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+     <!-- ID Column -->
+     <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+  
+      <!-- Progress Column -->
+      <ng-container matColumnDef="areaLived">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> area Lived </th>
+        <td mat-cell *matCellDef="let element"> {{element.areaLivde}} </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="ageOfDeath">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Age of Death </th>
+        <td mat-cell *matCellDef="let element"> {{element.ageOfDeath}} </td>
+      </ng-container>
+  
+      <!-- Color Column -->
+      <ng-container matColumnDef="areTheyChristian">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Are they Christian </th>
+        <td mat-cell *matCellDef="let element"> {{element.areTheyChristian}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="sumOfBeliefs">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Sum of Beliefs </th>
+        <td mat-cell *matCellDef="let element"> {{element.sumOfBeliefs.join(', ')}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="birthDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Birth Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.birthDate}} </td>
+      </ng-container>
+
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+  
