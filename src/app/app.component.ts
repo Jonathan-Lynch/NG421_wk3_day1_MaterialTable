@@ -19,4 +19,8 @@ export class AppComponent implements OnInit {
     this.dataSource = new MatTableDataSource(this.PhilosophersService.getPhilosophers());
     this.dataSource.sort = this.sort;
   }
+
+  applyFilter(filter: string): void {
+    this.dataSource.filter = filter.trim().toLowerCase();
+  }
 }

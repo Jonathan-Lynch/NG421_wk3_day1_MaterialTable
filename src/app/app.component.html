@@ -1,4 +1,8 @@
-<table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8" align="center">
+<mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="filter">
+  </mat-form-field>
+
+<table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8" align="center" width="80%">
 
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
